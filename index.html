@@ -21,7 +21,7 @@
     section{padding:100px 0}.intro{padding-top:45px}.section-head{display:grid;grid-template-columns:160px 1fr;gap:34px;margin-bottom:52px}.num{font:700 13px "Noto Serif JP";color:var(--orange);letter-spacing:.18em}.section-head h2{font:700 clamp(30px,4vw,50px)/1.45 "Noto Serif JP";margin:0 0 18px}.section-head p{margin:0;max-width:760px;color:var(--muted)}
     .opening{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}.opening-copy{background:var(--ink);color:white;padding:48px;border-radius:4px}.opening-copy strong{color:#ffd09e}.opening-copy h3{font:700 28px/1.55 "Noto Serif JP";margin:0 0 22px}.opening-copy p{margin:0;color:#d8e5df}.photo{height:100%;min-height:370px;object-fit:cover;border-radius:4px}
     .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.fact{padding:32px 18px;border-right:1px solid var(--line)}.fact:last-child{border:0}.fact b{display:block;font:700 32px "Noto Serif JP";color:var(--green)}.fact span{font-size:12px;color:var(--muted)}
-    .deep-dive{background:#edf3ee}.deep-intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:start;margin-bottom:38px}.deep-intro h3{font:700 30px/1.55 "Noto Serif JP";margin:0}.deep-intro p{margin:0;color:var(--muted)}.function-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:34px}.function-card{background:white;padding:26px 22px;border-bottom:4px solid var(--green)}.function-card b{display:block;font:700 18px "Noto Serif JP";margin-bottom:8px}.function-card span{font-size:13px;color:var(--muted)}.report{background:white;border-top:1px solid var(--line)}.report details{border-bottom:1px solid var(--line)}.report summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;padding:25px 28px;font-weight:700}.report summary::-webkit-details-marker{display:none}.report summary span:first-child{font:700 12px "Noto Serif JP";letter-spacing:.12em;color:var(--orange)}.report summary::after{content:"＋";font-size:22px;color:var(--green)}.report details[open] summary::after{content:"−"}.report-body{padding:0 28px 30px 166px;color:var(--muted);font-size:14px}.report-body p{margin:0 0 15px}.report-body ul{margin:0;padding-left:20px}.report-body li+li{margin-top:8px}.report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.report-stat{background:var(--paper);padding:16px}.report-stat b{display:block;font:700 24px "Noto Serif JP";color:var(--green)}.report-stat span{font-size:11px}.quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.quote{margin:0;background:var(--ink);color:white;padding:24px;font:600 15px/1.9 "Noto Serif JP"}.quote small{display:block;margin-top:12px;color:#b9d2c7;font:400 11px "Noto Sans JP"}
+    .deep-dive{display:none}.opening-copy{cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s}.opening-copy:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(24,53,44,.2)}.opening-copy:focus-visible{outline:4px solid var(--orange);outline-offset:4px}.pdf-hint{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:9px 14px;border:1px solid rgba(255,255,255,.45);font-size:12px;font-weight:700}.pdf-modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(9,24,19,.88);padding:18px}.pdf-modal.open{display:grid;place-items:center}.pdf-shell{width:min(1200px,100%);height:calc(100vh - 36px);background:var(--paper);display:grid;grid-template-rows:auto 1fr}.pdf-toolbar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--ink);color:white}.pdf-toolbar strong{margin-right:auto}.pdf-toolbar button,.pdf-toolbar a{border:1px solid rgba(255,255,255,.45);background:transparent;color:white;padding:8px 12px;font:700 12px "Noto Sans JP";text-decoration:none;cursor:pointer}.pdf-toolbar button:hover,.pdf-toolbar a:hover{background:white;color:var(--ink)}.pdf-frame{width:100%;height:100%;border:0;background:#555}
     .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.story{background:white;border-top:4px solid var(--green);padding:30px}.story small{color:var(--orange);font-weight:700}.story h3{font:700 21px/1.5 "Noto Serif JP";margin:10px 0}.story p{font-size:14px;color:var(--muted);margin:0}
     .visual-grid{margin-top:30px;display:grid;grid-template-columns:1.35fr .65fr;gap:14px}.visual-grid img{width:100%;height:420px;object-fit:cover}.visual-grid img+img{height:203px;margin-bottom:14px}
     .project{background:var(--ink);color:white}.project .section-head p{color:#cfddd7}.project .section-head h2{color:white}.project-list{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}.project-item{padding:28px 20px;background:var(--ink)}.project-item b{display:block;color:#aad4b8;font-size:12px;margin-bottom:10px}.project-item span{font-size:14px}
@@ -50,7 +50,7 @@
     <section class="intro" id="about">
       <div class="wrap">
         <div class="section-head"><div class="num">01 / はじめに</div><div><h2>地域の「あったらいいな」を、住民の手で形にしてきました。</h2><p>育つ会とおわは、住民が主体となって「遊び、学び、育ち合う」環境と場をつくる任意団体です。図書、公園、交流、美術。地域に足りないものを嘆くだけではなく、小さく始め、育て、次世代へつないできました。</p></div></div>
-        <div class="opening"><div class="opening-copy"><h3>図書館も、美術館も、公園もない。<br>だからこそ、地域の中につくる。</h3><p>十和地域では、文化や学びに触れる選択肢が限られています。2022年から旧小鳩保育所を活用し、行政と協働して図書機能・公園機能を備えた居場所づくりを開始。活動は4年目に委託事業となり、地域に必要とされる公共の場へと育っています。</p></div><img class="photo" src="assets/library.jpg" alt="旧小鳩保育所を活用した図書環境"></div>
+        <div class="opening"><div class="opening-copy" role="button" tabindex="0" onclick="openPdf()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPdf()}"><h3>図書館も、美術館も、公園もない。<br>だからこそ、地域の中につくる。</h3><p>十和地域では、文化や学びに触れる選択肢が限られています。2022年から旧小鳩保育所を活用し、行政と協働して図書機能・公園機能を備えた居場所づくりを開始。活動は4年目に委託事業となり、地域に必要とされる公共の場へと育っています。</p><span class="pdf-hint">育つ会とおわの原資料をめくって見る →</span></div><img class="photo" src="assets/library.jpg" alt="旧小鳩保育所を活用した図書環境"></div>
       </div>
     </section>
 
@@ -134,6 +134,50 @@
       <div class="wrap"><p class="eyebrow">地域の小さな公共を、ともに育てる</p><h2>この空き家を、誰もが「自分にもできる」と思える場所へ。</h2><p>美術活動は、絵を上手に描くためだけのものではありません。ものをよく見ること、自分の感じたことを表すこと、世代の違う誰かと同じ時間を過ごすこと。その一つひとつが、地域の豊かさにつながると私たちは考えています。</p><a class="contact" href="mailto:sodatsukai@gmail.com">お問い合わせ：sodatsukai@gmail.com</a></div>
     </section>
   </main>
+  <div class="pdf-modal" id="pdfModal" aria-hidden="true" onclick="if(event.target===this)closePdf()">
+    <div class="pdf-shell" role="dialog" aria-modal="true" aria-label="育つ会とおわの原資料">
+      <div class="pdf-toolbar">
+        <strong>育つ会とおわ｜社会教育委員会講習用資料</strong>
+        <button type="button" onclick="prevPage()">← 前へ</button>
+        <span id="pageLabel">1 / 26</span>
+        <button type="button" onclick="nextPage()">次へ →</button>
+        <a href="assets/sodatsukai-report.pdf" target="_blank" rel="noopener">別画面で開く</a>
+        <button type="button" onclick="closePdf()">閉じる ×</button>
+      </div>
+      <iframe class="pdf-frame" id="pdfFrame" title="育つ会とおわの原資料PDF"></iframe>
+    </div>
+  </div>
   <footer>育つ会とおわ　代表 酒井紀子 ｜ 2026年6月</footer>
+  <script>
+    const pdfPath = "assets/sodatsukai-report.pdf";
+    const pdfPages = 26;
+    let pdfPage = 1;
+    const pdfModal = document.getElementById("pdfModal");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const pageLabel = document.getElementById("pageLabel");
+    function showPage() {
+      pdfFrame.src = pdfPath + "#page=" + pdfPage + "&zoom=page-fit";
+      pageLabel.textContent = pdfPage + " / " + pdfPages;
+    }
+    function openPdf() {
+      pdfModal.classList.add("open");
+      pdfModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      showPage();
+    }
+    function closePdf() {
+      pdfModal.classList.remove("open");
+      pdfModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    function prevPage() { if (pdfPage > 1) { pdfPage--; showPage(); } }
+    function nextPage() { if (pdfPage < pdfPages) { pdfPage++; showPage(); } }
+    document.addEventListener("keydown", event => {
+      if (!pdfModal.classList.contains("open")) return;
+      if (event.key === "Escape") closePdf();
+      if (event.key === "ArrowLeft") prevPage();
+      if (event.key === "ArrowRight") nextPage();
+    });
+  </script>
 </body>
 </html>
