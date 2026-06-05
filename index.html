@@ -21,6 +21,7 @@
     section{padding:100px 0}.intro{padding-top:45px}.section-head{display:grid;grid-template-columns:160px 1fr;gap:34px;margin-bottom:52px}.num{font:700 13px "Noto Serif JP";color:var(--orange);letter-spacing:.18em}.section-head h2{font:700 clamp(30px,4vw,50px)/1.45 "Noto Serif JP";margin:0 0 18px}.section-head p{margin:0;max-width:760px;color:var(--muted)}
     .opening{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}.opening-copy{background:var(--ink);color:white;padding:48px;border-radius:4px}.opening-copy strong{color:#ffd09e}.opening-copy h3{font:700 28px/1.55 "Noto Serif JP";margin:0 0 22px}.opening-copy p{margin:0;color:#d8e5df}.photo{height:100%;min-height:370px;object-fit:cover;border-radius:4px}
     .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.fact{padding:32px 18px;border-right:1px solid var(--line)}.fact:last-child{border:0}.fact b{display:block;font:700 32px "Noto Serif JP";color:var(--green)}.fact span{font-size:12px;color:var(--muted)}
+    .deep-dive{background:#edf3ee}.deep-intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:start;margin-bottom:38px}.deep-intro h3{font:700 30px/1.55 "Noto Serif JP";margin:0}.deep-intro p{margin:0;color:var(--muted)}.function-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:34px}.function-card{background:white;padding:26px 22px;border-bottom:4px solid var(--green)}.function-card b{display:block;font:700 18px "Noto Serif JP";margin-bottom:8px}.function-card span{font-size:13px;color:var(--muted)}.report{background:white;border-top:1px solid var(--line)}.report details{border-bottom:1px solid var(--line)}.report summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;padding:25px 28px;font-weight:700}.report summary::-webkit-details-marker{display:none}.report summary span:first-child{font:700 12px "Noto Serif JP";letter-spacing:.12em;color:var(--orange)}.report summary::after{content:"＋";font-size:22px;color:var(--green)}.report details[open] summary::after{content:"−"}.report-body{padding:0 28px 30px 166px;color:var(--muted);font-size:14px}.report-body p{margin:0 0 15px}.report-body ul{margin:0;padding-left:20px}.report-body li+li{margin-top:8px}.report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.report-stat{background:var(--paper);padding:16px}.report-stat b{display:block;font:700 24px "Noto Serif JP";color:var(--green)}.report-stat span{font-size:11px}.quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.quote{margin:0;background:var(--ink);color:white;padding:24px;font:600 15px/1.9 "Noto Serif JP"}.quote small{display:block;margin-top:12px;color:#b9d2c7;font:400 11px "Noto Sans JP"}
     .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.story{background:white;border-top:4px solid var(--green);padding:30px}.story small{color:var(--orange);font-weight:700}.story h3{font:700 21px/1.5 "Noto Serif JP";margin:10px 0}.story p{font-size:14px;color:var(--muted);margin:0}
     .visual-grid{margin-top:30px;display:grid;grid-template-columns:1.35fr .65fr;gap:14px}.visual-grid img{width:100%;height:420px;object-fit:cover}.visual-grid img+img{height:203px;margin-bottom:14px}
     .project{background:var(--ink);color:white}.project .section-head p{color:#cfddd7}.project .section-head h2{color:white}.project-list{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}.project-item{padding:28px 20px;background:var(--ink)}.project-item b{display:block;color:#aad4b8;font-size:12px;margin-bottom:10px}.project-item span{font-size:14px}
@@ -29,8 +30,8 @@
     .ask{background:white}.ask-box{display:grid;grid-template-columns:.8fr 1.2fr;border:2px solid var(--ink)}.ask-total{background:var(--ink);color:white;padding:48px;display:flex;flex-direction:column;justify-content:center}.ask-total span{font-size:13px;color:#bdd5ca}.ask-total strong{font:900 clamp(50px,7vw,80px) "Noto Serif JP";color:#ffd09e}.ask-detail{padding:48px}.ask-detail h3{font:700 27px "Noto Serif JP";margin:0 0 20px}.price{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}.price b{white-space:nowrap}.impact{margin-top:24px;padding:18px;background:var(--paper);font-weight:700}
     .closing{text-align:center;background:var(--green);color:white}.closing h2{font:700 clamp(32px,5vw,58px)/1.45 "Noto Serif JP";margin:0 auto 24px;max-width:850px}.closing p{max-width:720px;margin:0 auto 32px;color:#dceae3}.contact{display:inline-block;background:white;color:var(--ink);padding:15px 26px;text-decoration:none;font-weight:700}
     footer{padding:30px 20px;text-align:center;font-size:11px;color:var(--muted)}
-    @media(max-width:800px){nav{position:absolute}.nav-links{display:none}.section-head,.opening,.house,.problem,.ask-box{grid-template-columns:1fr}.facts,.story-grid,.project-list{grid-template-columns:1fr 1fr}.visual-grid{grid-template-columns:1fr}.visual-grid img,.visual-grid img+img{height:280px;margin:0}.opening-copy,.house-copy,.ask-total,.ask-detail,.problem-card{padding:30px}section{padding:70px 0}}
-    @media(max-width:520px){.facts,.story-grid,.project-list{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}h1{font-size:42px}}
+    @media(max-width:800px){nav{position:absolute}.nav-links{display:none}.section-head,.opening,.house,.problem,.ask-box,.deep-intro{grid-template-columns:1fr}.facts,.story-grid,.project-list,.function-grid,.quote-row{grid-template-columns:1fr 1fr}.visual-grid{grid-template-columns:1fr}.visual-grid img,.visual-grid img+img{height:280px;margin:0}.opening-copy,.house-copy,.ask-total,.ask-detail,.problem-card{padding:30px}.report summary{grid-template-columns:80px 1fr auto}.report-body{padding-left:28px}.report-stats{grid-template-columns:1fr}}
+    @media(max-width:520px){.facts,.story-grid,.project-list,.function-grid,.quote-row{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}h1{font-size:42px}.report summary{grid-template-columns:1fr auto;gap:5px}.report summary span:first-child{grid-column:1/-1}}
   </style>
 </head>
 <body>
@@ -56,6 +57,46 @@
     <section>
       <div class="wrap">
         <div class="facts"><div class="fact"><b>2022年〜</b><span>旧保育所を活用した活動</span></div><div class="fact"><b>5,328人</b><span>来館者数・住民比245.7%</span></div><div class="fact"><b>21回</b><span>これまでに開催したイベント</span></div><div class="fact"><b>約580人</b><span>イベントへの延べ参加者</span></div></div>
+      </div>
+    </section>
+
+    <section class="deep-dive">
+      <div class="wrap">
+        <div class="section-head"><div class="num">育つ会とおわ / 詳細資料</div><div><h2>小さな図書環境から、地域の新しい公共へ。</h2><p>「図書館も、美術館も、公園もない」という課題から始まり、地域の人が自由に過ごし、学び、相談し、挑戦できる場所へ。育つ会とおわが積み重ねてきた活動を、詳しくご紹介します。</p></div></div>
+        <div class="deep-intro"><h3>住民の声に応えながら、<br>必要な機能を一つずつ増やしてきました。</h3><p>旧小鳩保育所を活用した活動は、単なる図書の貸出場所ではありません。子どもや保護者の居場所、文化活動の入口、情報へのアクセス、住民の企画を支える場として、地域の中で役割を広げています。</p></div>
+        <div class="function-grid">
+          <div class="function-card"><b>図書・情報</b><span>図書700冊、寄付本1,500冊、新聞5紙、雑誌約15冊を提供。</span></div>
+          <div class="function-card"><b>居場所・公園</b><span>未就学児から中学生、保護者までが自由に過ごせる「三間」を提供。</span></div>
+          <div class="function-card"><b>文化・学び</b><span>美術部、イベント、ワークショップ、学習場所など、多様な体験を創出。</span></div>
+          <div class="function-card"><b>相談・つながり</b><span>スマホ相談、子育て相談、ファミリーサポートの場として活用。</span></div>
+        </div>
+        <div class="report">
+          <details open>
+            <summary><span>ACTIVITY 01</span><span>図書館機能と情報へのアクセス</span></summary>
+            <div class="report-body"><p>もともと図書館や本屋がない十和地域で、住民が気軽に本や情報へ触れられる環境を提供しています。図書環境が整うことで、地域住民の図書サービスへの認識と利用が高まりました。</p><ul><li>貸出図書は300冊から700冊へ拡大。寄付本約1,500冊も利用可能</li><li>新聞5紙、雑誌約15冊を配架し、地域ならではの選書も実施</li><li>テーマ展示、図書リクエスト、図書館の使い方アドバイスを提供</li><li>毎月発行する広報紙を、回覧板・学校・保育所などへ約900部配布</li></ul></div>
+          </details>
+          <details>
+            <summary><span>ACTIVITY 02</span><span>子どもと保護者の居場所づくり</span></summary>
+            <div class="report-body"><p>自由に過ごせる場所の選択肢が極端に少ない地域で、時間・空間・仲間という「三間」を提供しています。おもちゃ、絵本、クッションなどを備え、親子が気負わず過ごせる環境を整えています。</p><ul><li>子育ての悩みを経験者へ相談する交流が日常的に生まれている</li><li>ファミリーサポートセンターのマッチングや援助活動にも活用</li><li>小鳩保育所の遠足先、十川小学校の社会科見学時の休憩地点として利用</li><li>中学生の試験勉強や授業までの空き時間の学習場所として活用</li></ul></div>
+          </details>
+          <details>
+            <summary><span>ACTIVITY 03</span><span>地域・文化活動と住民の主体性</span></summary>
+            <div class="report-body"><p>人が集まることで、新しい企画や活動が生まれています。単なる図書サービスを超え、地域住民の体験、学び、表現、交流を支える文化拠点として機能しています。</p><ul><li>住民・外部団体が企画するイベントへの会場提供と運営サポート</li><li>美術部ではボランティア講師を招き、子どもから社会人までが活動</li><li>イベントを通じ、文化活動に対する地域の需要を確認</li><li>外部団体と地域住民の交流や、新たな住民企画が生まれている</li></ul><div class="report-stats"><div class="report-stat"><b>21回</b><span>実施イベント数</span></div><div class="report-stat"><b>約580人</b><span>イベント延べ参加者</span></div><div class="report-stat"><b>14人</b><span>美術部参加者</span></div></div></div>
+          </details>
+          <details>
+            <summary><span>ACTIVITY 04</span><span>相談支援・行政連携・外部評価</span></summary>
+            <div class="report-body"><p>四万十町認定のスマホサポーターによる相談対応や、行政との月例会を実施。地域課題を確認しながらサービスを改善する、実証実験の場としても役割を果たしています。</p><ul><li>「おたすけスマホ」で、リピーターから新規利用者まで幅広く対応</li><li>育つ会とおわと役場関係課による月1回の定例会を実施</li><li>京都橘大学、図書館・福祉関係者、財団、地域団体などの視察を受け入れ</li><li>高知新聞への掲載、スタートアップ支援・共同募金・財団助成への採択</li></ul></div>
+          </details>
+          <details>
+            <summary><span>UPDATE</span><span>委託事業化によって拡充されたサービス</span></summary>
+            <div class="report-body"><p>3年間のボランティア活動を経て、2025年度から町の委託事業となりました。開館日や図書・情報サービスが拡大し、仕事終わりや平日にも利用しやすい場所へ進化しています。</p><ul><li>開館日を週2日から週5日へ、時間を10時〜18時へ拡大</li><li>図書を300冊から700冊へ拡充</li><li>新聞・雑誌・寄付本、テーマ展示、リクエスト受付を開始</li><li>Free Wi-Fiを活用した学習、会議、シェアオフィス的利用にも対応</li></ul></div>
+          </details>
+          <details>
+            <summary><span>VISION</span><span>十和図書館分館と、これからの地域の姿</span></summary>
+            <div class="report-body"><p>現在、十和地域では四万十町立十和図書館分館の整備が検討されています。育つ会とおわは、住民・行政と育んできた「小さな新しい公共」の実績と経験を、十和ならではの分館づくりへつなげたいと考えています。</p><p>住民が主体的に地域へ関わり、「遊び、学び、育ち合う」豊かな社会へ。誰もが「自分にはできる」と感じられる、可能性に満ちた場所を目指します。</p></div>
+          </details>
+        </div>
+        <div class="quote-row"><blockquote class="quote">「ここがなかったら、子育てどうなっていたかなと思うことがあります」<small>利用者の声</small></blockquote><blockquote class="quote">「みんなで集まって勉強できる場所が他にない」<small>中学生の声</small></blockquote><blockquote class="quote">「疲れている時に行ってもよくて、何時間いてもいいところ」<small>利用者の声</small></blockquote></div>
       </div>
     </section>
 
