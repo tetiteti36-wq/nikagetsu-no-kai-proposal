@@ -174,5 +174,564 @@
       if (event.key === "ArrowRight") nextPage();
     });
   </script>
+<style>
+    .hero-audience-emphasis {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 0.7em;
+        margin-bottom: 0.65em !important;
+        font-size: 1.65em !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.16em !important;
+        color: #d9f2d5 !important;
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-audience-emphasis::before,
+    .hero-audience-emphasis::after {
+        content: "";
+        width: 2.2em;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.75;
+    }
+
+    .hero-copy-sp {
+        display: none;
+    }
+
+    .community-copy-sp {
+        display: none;
+    }
+
+    .project-facts-emphasis {
+        font-size: 1.16em !important;
+        line-height: 1.9 !important;
+    }
+
+    .project-facts-emphasis > * {
+        font-size: inherit !important;
+    }
+
+    .collaboration-heading-nowrap {
+        white-space: nowrap !important;
+        font-size: clamp(1.35rem, 2.1vw, 2rem) !important;
+    }
+
+    .collaboration-card-expanded > * {
+        max-width: none !important;
+        width: 100% !important;
+    }
+
+    .collaboration-card-expanded {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .collaboration-card-expanded p {
+        max-width: none !important;
+        width: 100% !important;
+        font-size: 1.08rem !important;
+        line-height: 2 !important;
+    }
+
+    .collaboration-link-expanded {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 6.4rem !important;
+        padding: 1.5rem 2.5rem !important;
+        font-size: 1.25rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .cooling-card-heading-nowrap {
+        white-space: nowrap !important;
+        font-size: clamp(2.1rem, 3.25vw, 3.65rem) !important;
+        letter-spacing: -0.06em !important;
+    }
+
+    .heat-card-heading-balanced {
+        font-size: clamp(2.1rem, 3.25vw, 3.65rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    .closing-title-emphasis {
+        display: block !important;
+        margin: 0 auto 2.5rem !important;
+        font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+        font-size: clamp(2rem, 3vw, 3.35rem) !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.01em !important;
+        color: #ffffff !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    .closing-body-emphasis {
+        font-size: 1.12rem !important;
+        line-height: 2.05 !important;
+        text-align: left !important;
+    }
+
+    .funding-details-emphasis {
+        font-size: 1.08rem !important;
+        line-height: 1.75 !important;
+    }
+
+    .funding-details-emphasis h2,
+    .funding-details-emphasis h3 {
+        font-size: 1.65rem !important;
+    }
+
+    .funding-details-emphasis small {
+        font-size: 0.78rem !important;
+    }
+
+    .local-context-heading-two-lines {
+        font-size: clamp(1.35rem, 1.65vw, 1.75rem) !important;
+        line-height: 1.65 !important;
+        white-space: nowrap !important;
+    }
+
+    .featured-site-link {
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        gap: 0.35rem 1.5rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: 7.2rem !important;
+        padding: 1.35rem 5.5rem 1.35rem 1.75rem !important;
+        overflow: hidden !important;
+        border: 1px solid rgba(255, 255, 255, 0.55) !important;
+        border-radius: 12px !important;
+        background-color: #bd481f !important;
+        background-image:
+            linear-gradient(90deg, rgba(91, 31, 15, 0.94) 0%, rgba(151, 49, 18, 0.84) 55%, rgba(151, 49, 18, 0.46) 100%),
+            var(--featured-site-image, none) !important;
+        background-position: center !important;
+        background-size: cover !important;
+        box-shadow: 0 14px 32px rgba(62, 27, 15, 0.28) !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.62) !important;
+        text-decoration: none !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
+    }
+
+    .featured-site-link:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 20px 38px rgba(18, 54, 44, 0.25) !important;
+        filter: brightness(1.04) !important;
+    }
+
+    .featured-site-link::after {
+        content: "↗" !important;
+        position: absolute !important;
+        right: 1.7rem !important;
+        top: 50% !important;
+        display: grid !important;
+        place-items: center !important;
+        width: 3rem !important;
+        height: 3rem !important;
+        border: 1px solid currentColor !important;
+        border-radius: 50% !important;
+        font-size: 1.35rem !important;
+        transform: translateY(-50%) !important;
+        transition: transform 0.25s ease, background-color 0.25s ease !important;
+    }
+
+    .featured-site-link:hover::after {
+        transform: translateY(-50%) rotate(8deg) scale(1.08) !important;
+        background: rgba(255, 255, 255, 0.18) !important;
+    }
+
+    .featured-site-link-title {
+        position: relative !important;
+        z-index: 1 !important;
+        display: block !important;
+        font-family: "Noto Serif JP", "Yu Mincho", serif !important;
+        font-size: 1.38rem !important;
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+        color: #ffffff !important;
+    }
+
+    .featured-site-link-description {
+        position: relative !important;
+        z-index: 1 !important;
+        display: block !important;
+        grid-column: 1 !important;
+        max-width: 42rem !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        line-height: 1.65 !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+    }
+
+    @media (max-width: 767px) {
+        .hero-audience-emphasis {
+            gap: 0.45em;
+            font-size: 1.3em !important;
+            letter-spacing: 0.1em !important;
+        }
+
+        .hero-audience-emphasis::before,
+        .hero-audience-emphasis::after {
+            width: 1.2em;
+        }
+
+        .hero-copy-pc {
+            display: none;
+        }
+
+        .hero-copy-sp {
+            display: inline;
+        }
+
+        .community-copy-pc {
+            display: none;
+        }
+
+        .community-copy-sp {
+            display: inline;
+        }
+
+        .project-facts-emphasis {
+            font-size: 1.06em !important;
+        }
+
+        .collaboration-heading-nowrap {
+            font-size: clamp(1rem, 4.1vw, 1.25rem) !important;
+        }
+
+        .collaboration-link-expanded {
+            min-height: 5rem !important;
+            padding: 1.2rem 1.4rem !important;
+            font-size: 1rem !important;
+        }
+
+        .cooling-card-heading-nowrap {
+            font-size: clamp(1.65rem, 8.5vw, 2.6rem) !important;
+        }
+
+        .heat-card-heading-balanced {
+            font-size: clamp(1.65rem, 8.5vw, 2.6rem) !important;
+        }
+
+        .closing-title-emphasis {
+            margin-bottom: 1.8rem !important;
+            font-size: clamp(1.65rem, 7vw, 2.45rem) !important;
+            white-space: normal !important;
+        }
+
+        .closing-body-emphasis {
+            font-size: 1rem !important;
+            line-height: 1.95 !important;
+        }
+
+        .funding-details-emphasis {
+            font-size: 1rem !important;
+        }
+
+        .local-context-heading-two-lines {
+            font-size: 1.25rem !important;
+            white-space: normal !important;
+        }
+
+        .featured-site-link {
+            min-height: 7rem !important;
+            padding: 1.25rem 4.5rem 1.25rem 1.25rem !important;
+            border-radius: 9px !important;
+        }
+
+        .featured-site-link::after {
+            right: 1rem !important;
+            width: 2.6rem !important;
+            height: 2.6rem !important;
+        }
+
+        .featured-site-link-title {
+            font-size: 1.15rem !important;
+        }
+
+        .featured-site-link-description {
+            font-size: 0.82rem !important;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const compact = (text) => text.replace(/\s/g, '');
+        const elements = [...document.body.querySelectorAll('*')]
+            .sort((a, b) => a.children.length - b.children.length);
+
+        const audience = elements.find((element) =>
+            /二[ヶかカ]月の会のみなさまへ/.test(compact(element.textContent))
+        );
+        if (audience) audience.classList.add('hero-audience-emphasis');
+
+        const heroCopy = elements.find((element) =>
+            compact(element.textContent) === 'どこでも美術活動が行える環境を提供したい。'
+        );
+        if (heroCopy) {
+            heroCopy.innerHTML =
+                '<span class="hero-copy-pc">どこでも<br>美術活動が行える<br>環境を提供したい。</span>' +
+                '<span class="hero-copy-sp">どこでも美術活<br>動が行える環境<br>を提供したい。</span>';
+        }
+
+        const communityCopy = elements.find((element) =>
+            /^地域の「あったらいいな」を、?住民の手で形にしてきました。$/.test(compact(element.textContent))
+        );
+        if (communityCopy) {
+            communityCopy.innerHTML =
+                '<span class="community-copy-pc">地域の「あったらいいな」を<br>住民の手で形にしてきました。</span>' +
+                '<span class="community-copy-sp">地域の「あったらいい<br>な」を住民の手で形に<br>してきました。</span>';
+        }
+
+        const organizationIntro = elements.find((element) =>
+            compact(element.textContent) === '育つ会とおわは、住民が主体となって「遊び、学び、育ち合う」環境と場をつくる任意団体です。図書、公園、交流、美術。地域に足りないものを嘆くだけではなく、小さく始め、育て、次世代へつないできました。'
+        );
+        if (organizationIntro) {
+            organizationIntro.textContent = '育つ会とおわは、住民が主体となって「遊び、学び、育ち合う」環境と場をつくる任意団体です。図書、公園、美術。それらを通じた交流。地域に足りないものを嘆くだけではなく、小さく始め、育て、次世代へつなぐことを目指しています。';
+        }
+
+        const localContextHeading = elements.find((element) =>
+            compact(element.textContent) === '図書館も、美術館も、公園もない。だからこそ、地域の中につくる。' ||
+            compact(element.textContent) === '図書館も、美術館も、遊具のある公園もない。だからこそ、地域の中につくる。'
+        );
+        if (localContextHeading) {
+            localContextHeading.innerHTML = '図書館も、美術館も、遊具のある公園もないなら。<br>地域とともに創る、育てる。';
+            localContextHeading.classList.add('local-context-heading-two-lines');
+        }
+
+        const localContextBody = elements.find((element) =>
+            compact(element.textContent).includes('十和地域では、文化や学びに触れる選択肢が限られています。')
+        );
+        if (localContextBody) {
+            localContextBody.textContent = '十和地域は、自然や人間関係が豊かな一方で、文化や学びに触れる選択肢や、誰もが集える居場所に限りがあります。そのため、2022年から旧小鳩保育所を活用し、行政と協働して図書・公園機能を備えた居場所づくりを開始しました。活動は3年間のボランティア期間を経て委託事業となり、5年目を迎えました。地域に必要とされる公共の場として根づくよう、これからも地域とともに育てていきます。';
+        }
+
+        const artClubHeading = elements.find((element) =>
+            compact(element.textContent) === '「美術部に入りたい」きっかけは6年生たちの声でした。'
+        );
+        if (artClubHeading) {
+            artClubHeading.innerHTML = '「美術部に入りたい」きっかけは<br>6年生たちの声でした。';
+        }
+
+        const artClubIntro = elements.find((element) =>
+            compact(element.textContent) === '2023年6月、子どもの声をきっかけに旧小鳩美術部が始まりました。美術大学出身の講師を招き、小学生から社会人までが同じ場所で、観察し、考え、表現しています。'
+        );
+        if (artClubIntro) {
+            artClubIntro.innerHTML = '2023年6月、子どもたちの声をきっかけに旧小鳩美術部が始まりました。美術大学出身の講師を招き、<br>小学生から社会人までが同じ場所で、視て、考え、表現しています。';
+        }
+
+        const artClubResults = elements.find((element) =>
+            compact(element.textContent) === '町主催のアンデパンダン展への出展、高知新聞への掲載など、表現が社会とつながる経験を重ねています。'
+        );
+        if (artClubResults) {
+            artClubResults.textContent = '町主催のアンデパンダン展、地元文化祭への出展、高知新聞の取材・掲載など、表現が社会とつながる経験を重ねています。';
+        }
+
+        const satelliteHeading = elements.find((element) =>
+            compact(element.textContent) === '2026年度、国道沿いの空き家に、美術活動のサテライトを開きます。'
+        );
+        if (satelliteHeading) {
+            satelliteHeading.innerHTML = '2026年度、国道沿いの空き家に、<br>美術活動のサテライトを開きます。';
+        }
+
+        ['いつ', 'どこで', 'だれが', 'なにを', 'めざすこと'].forEach((label) => {
+            const labelElement = elements.find((element) => compact(element.textContent) === label);
+            if (labelElement && labelElement.parentElement) {
+                labelElement.parentElement.classList.add('project-facts-emphasis');
+            }
+        });
+
+        const collaborationHeading = elements.find((element) =>
+            compact(element.textContent) === 'すでに始まっている空き家活動とも、協働・連携しながら。'
+        );
+        if (collaborationHeading) {
+            collaborationHeading.classList.add('collaboration-heading-nowrap');
+            collaborationHeading.textContent = 'すでに始まっている空き家活動とも、協働・連携しながら。';
+        }
+
+        const collaborationBody = elements.find((element) =>
+            compact(element.textContent).includes('十和地区では「とおわのお茶堂」をはじめ、空き家相談')
+        );
+        if (collaborationBody) {
+            collaborationBody.textContent = '一方で、「とおわのお茶堂」というプロジェクトでは、空き家相談、スマホ相談、パン販売、地域の掲示板、休憩など、空き家を活用した地域との接点づくりを試みています。こうした既存の取り組みと協働・連携することで、美術活動を閉じたものに終わらせず、世代を越えた関係を育みながら、芸術・文化への入口を地域の中に増やしていきたいと考えています。';
+            let collaborationCard = collaborationBody.parentElement;
+            while (collaborationCard && !collaborationCard.querySelector('a')) {
+                collaborationCard = collaborationCard.parentElement;
+            }
+            if (collaborationCard) {
+                collaborationCard.classList.add('collaboration-card-expanded');
+            }
+        }
+
+        const teaHouseLink = [...document.querySelectorAll('a')].find((element) =>
+            compact(element.textContent).includes('とおわのお茶堂のサイトを見る')
+        );
+        if (teaHouseLink) {
+            teaHouseLink.classList.add('collaboration-link-expanded');
+        }
+
+        const currentIssueHeading = elements.find((element) =>
+            compact(element.textContent) === '活動を始める準備は整いました。けれど、夏を越える設備がありません。'
+        );
+        if (currentIssueHeading) {
+            currentIssueHeading.innerHTML = '活動を始める準備は整いました。<br>しかし、安心して夏を過ごせる<br>環境がありません。';
+        }
+
+        const currentIssueIntro = elements.find((element) =>
+            compact(element.textContent) === '会場となる空き家は古い建物で、冷房設備がありません。高知の厳しい夏の中で、子どもから大人までが長時間制作するには、安全な室温を保つ環境が不可欠です。'
+        );
+        if (currentIssueIntro) {
+            currentIssueIntro.textContent = '会場となる空き家には、冷房設備がありません。高知の厳しい夏の中で、文化拠点を楽しみ、制作するには、安全な室温を保つ環境が不可欠です。';
+        }
+
+        const mobileCoolingHeading = elements.find((element) =>
+            compact(element.textContent) === '移動式'
+        );
+        if (mobileCoolingHeading) {
+            mobileCoolingHeading.textContent = '移動式クーラー';
+            mobileCoolingHeading.classList.add('cooling-card-heading-nowrap');
+        }
+
+        const updatedMobileCoolingHeading = elements.find((element) =>
+            compact(element.textContent) === '移動式クーラー'
+        );
+        if (updatedMobileCoolingHeading) {
+            updatedMobileCoolingHeading.classList.add('cooling-card-heading-nowrap');
+        }
+
+        const mobileCoolingBenefit = elements.find((element) =>
+            compact(element.textContent) === '一台で、夏に使える居場所を増やせます。'
+        );
+        if (mobileCoolingBenefit) {
+            mobileCoolingBenefit.textContent = '夏に安心して使える居場所を増やせます。';
+        }
+
+        const heatRiskBody = elements.find((element) =>
+            compact(element.textContent) === '夏場に室内が高温になると、熱中症の危険だけでなく、集中して作品に向き合うことも難しくなります。活動拠点である旧小鳩保育所にも、冷房設備がない教室があります。'
+        );
+        if (heatRiskBody) {
+            heatRiskBody.textContent = '夏場に室内が高温になると、文化を楽しむことも、集中して作品に向き合うことも難しいだけでなく、熱中症の可能性が高まり危険です。活動拠点である旧小鳩保育所にも、冷房設備がない教室があります。';
+        }
+
+        const heatRiskHeading = elements.find((element) =>
+            compact(element.textContent) === '35℃超'
+        );
+        if (heatRiskHeading) {
+            heatRiskHeading.textContent = '夏場の暑さ';
+            heatRiskHeading.classList.add('heat-card-heading-balanced');
+        }
+
+        const fundingImpactHeading = elements.find((element) =>
+            compact(element.textContent) === '67,210円で、夏にも安心してひらける美術室をつくれます。'
+        );
+        if (fundingImpactHeading) {
+            fundingImpactHeading.textContent = '67,210円で、夏にも安心して活動できる美術室をつくれます。';
+        }
+
+        const fundingImpactBody = elements.find((element) =>
+            compact(element.textContent).includes('ご支援いただければ')
+        );
+        if (fundingImpactBody) {
+            fundingImpactBody.textContent = 'ご支援頂くことができれば、空き家と旧小鳩保育所の双方に、夏も安心して利用できる居場所を増やせます。';
+            let fundingDetails = fundingImpactBody.parentElement;
+            while (fundingDetails && !compact(fundingDetails.textContent).includes('購入予定品')) {
+                fundingDetails = fundingDetails.parentElement;
+            }
+            if (fundingDetails) {
+                fundingDetails.classList.add('funding-details-emphasis');
+            }
+        }
+
+        const closingTitle = elements.find((element) => {
+            const text = compact(element.textContent).replace(/[、。]/g, '');
+            return text === '地域の小さな公共をともに育てる' ||
+                text === '小さな公共をともに育てる';
+        });
+        if (closingTitle) {
+            closingTitle.textContent = '小さな公共をともに育てる';
+            closingTitle.classList.add('closing-title-emphasis');
+            closingTitle.style.setProperty('display', 'block', 'important');
+            closingTitle.style.setProperty('font-family', '"Noto Serif JP", "Yu Mincho", serif', 'important');
+            closingTitle.style.setProperty('font-size', 'clamp(2rem, 3vw, 3.35rem)', 'important');
+            closingTitle.style.setProperty('font-weight', '700', 'important');
+            closingTitle.style.setProperty('line-height', '1.3', 'important');
+            closingTitle.style.setProperty('color', '#fff', 'important');
+            closingTitle.style.setProperty('text-align', 'center', 'important');
+            closingTitle.style.setProperty('margin', '0 auto 2.5rem', 'important');
+            closingTitle.style.setProperty('white-space', 'nowrap', 'important');
+        }
+
+        const updatedClosingTitle = elements.find((element) =>
+            compact(element.textContent) === '小さな公共をともに育てる'
+        );
+        if (updatedClosingTitle) {
+            updatedClosingTitle.classList.add('closing-title-emphasis');
+        }
+
+        const vacantHouseHeading = elements.find((element) =>
+            compact(element.textContent).startsWith('空き家に')
+        );
+        if (vacantHouseHeading) {
+            vacantHouseHeading.remove();
+        }
+
+        const closingBody = elements.find((element) =>
+            compact(element.textContent).includes('美術活動は、絵を上手に描くためだけのものではありません。')
+        );
+        if (closingBody) {
+            closingBody.textContent = '美術活動は、絵を上手に描くためだけのものではありません。ものをよく視ること、自分の感じたことを表現すること、相手の表現を受けとめること、世代の違う誰かと同じ時間を過ごすこと。その一つひとつが、地域の豊かさにつながると私たちは考えています。また本事業は、空き家に新たな価値を生み出し、地域の課題解決へ向けた一つの足がかりにもなると考えています。二ヶ月の会の皆さまのお力添えをいただき、誰もが文化や芸術に触れられる、小さな公共を地域とともに育てていきたいと考えています。私たちの新たな一歩に、どうかお力をお貸しください。';
+            closingBody.classList.add('closing-body-emphasis');
+        }
+
+        const featuredSites = [
+            {
+                match: '旧小鳩美術部の活動サイトを見る',
+                title: '旧小鳩美術部の活動サイトを見る',
+                description: '子どもから大人までが、ともに視て、考え、表現する活動の記録'
+            },
+            {
+                match: 'とおわのお茶堂のサイトを見る',
+                title: 'とおわのお茶堂のサイトを見る',
+                description: '空き家から生まれる、相談・販売・交流の小さな地域拠点'
+            }
+        ];
+
+        featuredSites.forEach((site) => {
+            const link = [...document.querySelectorAll('a')].find((element) =>
+                compact(element.textContent).includes(compact(site.match))
+            );
+            if (link) {
+                link.classList.add('featured-site-link');
+                link.innerHTML =
+                    `<span class="featured-site-link-title">${site.title}</span>` +
+                    `<span class="featured-site-link-description">${site.description}</span>`;
+
+                if (!site.match.includes('とおわのお茶堂')) {
+                    let image = null;
+                    let section = link.closest('section') || link.parentElement;
+                    while (section && !image) {
+                        image = section.querySelector('img');
+                        section = section.parentElement;
+                    }
+                    if (image) {
+                        const imageUrl = image.currentSrc || image.getAttribute('src');
+                        link.style.setProperty('--featured-site-image', `url("${imageUrl}")`);
+                    }
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
