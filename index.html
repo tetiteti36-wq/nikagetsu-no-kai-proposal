@@ -204,6 +204,21 @@
         display: none;
     }
 
+    .local-context-copy-sp {
+        display: none;
+    }
+
+    .art-club-copy-sp,
+    .art-club-intro-sp,
+    .motivation-copy-sp,
+    .experience-copy-sp,
+    .satellite-copy-sp,
+    .collaboration-copy-sp,
+    .current-issue-copy-sp,
+    .closing-title-copy-sp {
+        display: none;
+    }
+
     .project-facts-emphasis {
         font-size: 1.16em !important;
         line-height: 1.9 !important;
@@ -402,12 +417,61 @@
             display: inline;
         }
 
+        .local-context-copy-pc {
+            display: none;
+        }
+
+        .local-context-copy-sp {
+            display: inline;
+        }
+
+        .art-club-copy-pc,
+        .art-club-intro-pc {
+            display: none;
+        }
+
+        .art-club-copy-sp,
+        .art-club-intro-sp,
+        .motivation-copy-sp,
+        .experience-copy-sp,
+        .satellite-copy-sp,
+        .collaboration-copy-sp,
+        .current-issue-copy-sp,
+        .closing-title-copy-sp {
+            display: inline;
+        }
+
+        .collaboration-copy-pc {
+            display: none;
+        }
+
+        .current-issue-copy-pc {
+            display: none;
+        }
+
+        .closing-title-copy-pc {
+            display: none;
+        }
+
+        .motivation-copy-pc {
+            display: none;
+        }
+
+        .experience-copy-pc {
+            display: none;
+        }
+
+        .satellite-copy-pc {
+            display: none;
+        }
+
         .project-facts-emphasis {
             font-size: 1.06em !important;
         }
 
         .collaboration-heading-nowrap {
             font-size: clamp(1rem, 4.1vw, 1.25rem) !important;
+            white-space: normal !important;
         }
 
         .collaboration-link-expanded {
@@ -491,7 +555,7 @@
         if (communityCopy) {
             communityCopy.innerHTML =
                 '<span class="community-copy-pc">地域の「あったらいいな」を<br>住民の手で形にしてきました。</span>' +
-                '<span class="community-copy-sp">地域の「あったらいい<br>な」を住民の手で形に<br>してきました。</span>';
+                '<span class="community-copy-sp">地域の「あったらいいな」<br>を住民の手で形にして<br>きました。</span>';
         }
 
         const organizationIntro = elements.find((element) =>
@@ -506,7 +570,9 @@
             compact(element.textContent) === '図書館も、美術館も、遊具のある公園もない。だからこそ、地域の中につくる。'
         );
         if (localContextHeading) {
-            localContextHeading.innerHTML = '図書館も、美術館も、遊具のある公園もないなら。<br>地域とともに創る、育てる。';
+            localContextHeading.innerHTML =
+                '<span class="local-context-copy-pc">図書館も、美術館も、遊具のある公園もないなら。<br>地域とともに創る、育てる。</span>' +
+                '<span class="local-context-copy-sp">図書館も、美術館も、<br>遊具のある公園もない<br>なら。地域とともに<br>作る、育てる。</span>';
             localContextHeading.classList.add('local-context-heading-two-lines');
         }
 
@@ -521,14 +587,36 @@
             compact(element.textContent) === '「美術部に入りたい」きっかけは6年生たちの声でした。'
         );
         if (artClubHeading) {
-            artClubHeading.innerHTML = '「美術部に入りたい」きっかけは<br>6年生たちの声でした。';
+            artClubHeading.innerHTML =
+                '<span class="art-club-copy-pc">「美術部に入りたい」きっかけは<br>6年生たちの声でした。</span>' +
+                '<span class="art-club-copy-sp">「美術部に入りたい」<br>きっかけは6年生たち<br>の声でした。</span>';
         }
 
         const artClubIntro = elements.find((element) =>
             compact(element.textContent) === '2023年6月、子どもの声をきっかけに旧小鳩美術部が始まりました。美術大学出身の講師を招き、小学生から社会人までが同じ場所で、観察し、考え、表現しています。'
         );
         if (artClubIntro) {
-            artClubIntro.innerHTML = '2023年6月、子どもたちの声をきっかけに旧小鳩美術部が始まりました。美術大学出身の講師を招き、<br>小学生から社会人までが同じ場所で、視て、考え、表現しています。';
+            artClubIntro.innerHTML =
+                '<span class="art-club-intro-pc">2023年6月、子どもたちの声をきっかけに旧小鳩美術部が始まりました。美術大学出身の講師を招き、<br>小学生から社会人までが同じ場所で、視て、考え、表現しています。</span>' +
+                '<span class="art-club-intro-sp">2023年6月、子どもたちの声をきっかけに<br>旧小鳩美術部が始まりました。美術大学出身の<br>講師を招き、小学生から社会人まで同じ場所で<br>視て、考え、表現しています。</span>';
+        }
+
+        const motivationHeading = elements.find((element) =>
+            compact(element.textContent) === '選択肢が少なくても、学びたい気持ちはある'
+        );
+        if (motivationHeading) {
+            motivationHeading.innerHTML =
+                '<span class="motivation-copy-pc">選択肢が少なくても、学びたい気持ちはある</span>' +
+                '<span class="motivation-copy-sp">選択肢が少なくても、<br>学びたい気持ちが<br>ある</span>';
+        }
+
+        const experienceHeading = elements.find((element) =>
+            compact(element.textContent) === '作品を地域の外へ届ける経験も'
+        );
+        if (experienceHeading) {
+            experienceHeading.innerHTML =
+                '<span class="experience-copy-pc">作品を地域の外へ届ける経験も</span>' +
+                '<span class="experience-copy-sp">作品を地域の外へ<br>届ける経験</span>';
         }
 
         const artClubResults = elements.find((element) =>
@@ -542,7 +630,9 @@
             compact(element.textContent) === '2026年度、国道沿いの空き家に、美術活動のサテライトを開きます。'
         );
         if (satelliteHeading) {
-            satelliteHeading.innerHTML = '2026年度、国道沿いの空き家に、<br>美術活動のサテライトを開きます。';
+            satelliteHeading.innerHTML =
+                '<span class="satellite-copy-pc">2026年度、国道沿いの空き家に、<br>美術活動のサテライトを開きます。</span>' +
+                '<span class="satellite-copy-sp">2026年度、国道沿いの<br>空き家に、美術活動の<br>サテライトを開きます。</span>';
         }
 
         ['いつ', 'どこで', 'だれが', 'なにを', 'めざすこと'].forEach((label) => {
@@ -557,7 +647,9 @@
         );
         if (collaborationHeading) {
             collaborationHeading.classList.add('collaboration-heading-nowrap');
-            collaborationHeading.textContent = 'すでに始まっている空き家活動とも、協働・連携しながら。';
+            collaborationHeading.innerHTML =
+                '<span class="collaboration-copy-pc">すでに始まっている空き家活動とも、協働・連携しながら。</span>' +
+                '<span class="collaboration-copy-sp">すでに始まっている<br>空き家活動とも、<br>協働・連携しながら。</span>';
         }
 
         const collaborationBody = elements.find((element) =>
@@ -585,7 +677,9 @@
             compact(element.textContent) === '活動を始める準備は整いました。けれど、夏を越える設備がありません。'
         );
         if (currentIssueHeading) {
-            currentIssueHeading.innerHTML = '活動を始める準備は整いました。<br>しかし、安心して夏を過ごせる<br>環境がありません。';
+            currentIssueHeading.innerHTML =
+                '<span class="current-issue-copy-pc">活動を始める準備は整いました。<br>しかし、安心して夏を過ごせる<br>環境がありません。</span>' +
+                '<span class="current-issue-copy-sp">活動を始める準備は整いま<br>した。しかし安心して夏を<br>過ごせる環境がありません。</span>';
         }
 
         const currentIssueIntro = elements.find((element) =>
@@ -640,10 +734,12 @@
         }
 
         const fundingImpactBody = elements.find((element) =>
-            compact(element.textContent).includes('ご支援いただければ')
+            compact(element.textContent).includes('ご支援いただければ') ||
+            compact(element.textContent).includes('ご支援頂くことができれば') ||
+            compact(element.textContent).includes('一度のご支援で、空き家と旧小鳩保育所の双方に、夏も安心して利用できる居場所を増やせます。')
         );
         if (fundingImpactBody) {
-            fundingImpactBody.textContent = 'ご支援頂くことができれば、空き家と旧小鳩保育所の双方に、夏も安心して利用できる居場所を増やせます。';
+            fundingImpactBody.innerHTML = 'ご支援頂くことができれば、空き家と旧小鳩保育所の双方に、<br>夏も安心して利用できる居場所を増やせます。';
             let fundingDetails = fundingImpactBody.parentElement;
             while (fundingDetails && !compact(fundingDetails.textContent).includes('購入予定品')) {
                 fundingDetails = fundingDetails.parentElement;
@@ -659,7 +755,9 @@
                 text === '小さな公共をともに育てる';
         });
         if (closingTitle) {
-            closingTitle.textContent = '小さな公共をともに育てる';
+            closingTitle.innerHTML =
+                '<span class="closing-title-copy-pc">小さな公共をともに育てる</span>' +
+                '<span class="closing-title-copy-sp">小さな公共をともに<br>育てる。</span>';
             closingTitle.classList.add('closing-title-emphasis');
             closingTitle.style.setProperty('display', 'block', 'important');
             closingTitle.style.setProperty('font-family', '"Noto Serif JP", "Yu Mincho", serif', 'important');
@@ -669,7 +767,6 @@
             closingTitle.style.setProperty('color', '#fff', 'important');
             closingTitle.style.setProperty('text-align', 'center', 'important');
             closingTitle.style.setProperty('margin', '0 auto 2.5rem', 'important');
-            closingTitle.style.setProperty('white-space', 'nowrap', 'important');
         }
 
         const updatedClosingTitle = elements.find((element) =>
@@ -729,6 +826,19 @@
                         link.style.setProperty('--featured-site-image', `url("${imageUrl}")`);
                     }
                 }
+            }
+        });
+
+        [...document.querySelectorAll('a[href]')].forEach((link) => {
+            try {
+                const destination = new URL(link.href, window.location.href);
+                if (destination.origin !== window.location.origin) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.setAttribute('aria-label', `${link.textContent.trim()}（新しいタブで開く）`);
+                }
+            } catch (error) {
+                // Keep non-URL links such as page anchors unchanged.
             }
         });
     });
