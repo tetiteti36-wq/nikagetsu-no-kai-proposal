@@ -339,9 +339,13 @@
     }
 
     .featured-site-link:hover {
-        transform: translateY(-5px) !important;
+        transform: translateY(-7px) rotate(-1deg) scale(1.015) !important;
         box-shadow: 0 20px 38px rgba(18, 54, 44, 0.25) !important;
-        filter: brightness(1.04) !important;
+        filter: brightness(1.04) saturate(1.08) !important;
+    }
+
+    .featured-site-link:active {
+        transform: translateY(-2px) rotate(-0.4deg) scale(0.99) !important;
     }
 
     .featured-site-link::after {
