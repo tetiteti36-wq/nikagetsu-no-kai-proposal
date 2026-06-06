@@ -738,10 +738,11 @@
         const fundingImpactBody = elements.find((element) =>
             compact(element.textContent).includes('ご支援いただければ') ||
             compact(element.textContent).includes('ご支援頂くことができれば') ||
+            compact(element.textContent).includes('ご支援いただくことができれば') ||
             compact(element.textContent).includes('一度のご支援で、空き家と旧小鳩保育所の双方に、夏も安心して利用できる居場所を増やせます。')
         );
         if (fundingImpactBody) {
-            fundingImpactBody.innerHTML = 'ご支援頂くことができれば、空き家と旧小鳩保育所の双方に、<br>夏も安心して利用できる居場所を増やせます。';
+            fundingImpactBody.innerHTML = 'ご支援いただくことができれば、<br>空き家と旧小鳩保育所の双方<br>に、夏も安心して利用できる<br>居場所を増やせます。';
             let fundingDetails = fundingImpactBody.parentElement;
             while (fundingDetails && !compact(fundingDetails.textContent).includes('購入予定品')) {
                 fundingDetails = fundingDetails.parentElement;
